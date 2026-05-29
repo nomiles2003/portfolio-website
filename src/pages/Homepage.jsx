@@ -1,73 +1,14 @@
 import { Link } from "react-router-dom";
 import ProjectCard from "../components/ProjectCard";
 import CardSection from "../components/CardSection";
-import {
-  CPlusplus,
-  CSharp,
-  Docker,
-  Dotnet,
-  Javascript,
-  Python,
-  _React,
-} from "@dev.icons/react";
 import SkillCard from "../components/SkillCard";
+import { projects } from "../../data/projects";
+import { skills } from "../../data/skills";
 
 const highlights = [
   { label: "Years coding", value: "4+" },
   { label: "Projects shipped", value: "18" },
   { label: "Focus", value: "Full stack" },
-];
-
-const featuredProjects = [
-  {
-    title: "Career Agent",
-    description:
-      "An AI-assisted career workspace for resume review, interview practice, and guided job-search planning.",
-    stack: ["React", "AI UX", "Product"],
-  },
-  {
-    title: "Portfolio Platform",
-    description:
-      "A polished personal site with route-based pages, project storytelling, and responsive front-end architecture.",
-    stack: ["Vite", "React", "Tailwind"],
-  },
-  {
-    title: "Data Dashboard",
-    description:
-      "A clean analytics interface designed around fast scanning, useful filtering, and clear operational signals.",
-    stack: ["Charts", "APIs", "State"],
-  },
-];
-
-const skills = [
-  {
-    icon: <Dotnet />,
-    title: ".NET",
-  },
-  {
-    icon: <CSharp />,
-    title: "C#",
-  },
-  {
-    icon: <CPlusplus />,
-    title: "C++",
-  },
-  {
-    icon: <Python />,
-    title: "Python",
-  },
-  {
-    icon: <Javascript />,
-    title: "Javascript",
-  },
-  {
-    icon: <_React />,
-    title: "React",
-  },
-  {
-    icon: <Docker />,
-    title: "Docker (familiarity)",
-  },
 ];
 
 function Homepage() {
@@ -174,7 +115,7 @@ function Homepage() {
         link={"projects"}
         linkName={"See all projects"}
       >
-        {featuredProjects.map((project) => (
+        {projects.map((project) => (
           <ProjectCard
             title={project.title}
             description={project.description}
