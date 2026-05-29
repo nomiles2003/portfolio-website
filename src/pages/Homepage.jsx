@@ -1,6 +1,16 @@
 import { Link } from "react-router-dom";
 import ProjectCard from "../components/ProjectCard";
 import CardSection from "../components/CardSection";
+import {
+  CPlusplus,
+  CSharp,
+  Docker,
+  Dotnet,
+  Javascript,
+  Python,
+  _React,
+} from "@dev.icons/react";
+import SkillCard from "../components/SkillCard";
 
 const highlights = [
   { label: "Years coding", value: "4+" },
@@ -29,18 +39,34 @@ const featuredProjects = [
   },
 ];
 
-const skillGroups = [
+const skills = [
   {
-    title: "Frontend",
-    skills: ["React", "JavaScript", "Tailwind CSS", "Responsive UI"],
+    icon: <Dotnet />,
+    title: ".NET",
   },
   {
-    title: "Backend",
-    skills: ["Node.js", "REST APIs", "Databases", "Authentication"],
+    icon: <CSharp />,
+    title: "C#",
   },
   {
-    title: "Engineering",
-    skills: ["Git", "Testing", "Performance", "Accessibility"],
+    icon: <CPlusplus />,
+    title: "C++",
+  },
+  {
+    icon: <Python />,
+    title: "Python",
+  },
+  {
+    icon: <Javascript />,
+    title: "Javascript",
+  },
+  {
+    icon: <_React />,
+    title: "React",
+  },
+  {
+    icon: <Docker />,
+    title: "Docker (familiarity)",
   },
 ];
 
@@ -142,34 +168,6 @@ function Homepage() {
         </div>
       </section>
 
-      {/* <section className="border-y border-[var(--border)] bg-[var(--social-bg)] px-6 py-12 sm:px-10 lg:px-14">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-            <div>
-              <p className="text-3xl font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
-                Featured projects
-              </p>
-            </div>
-            <Link
-              to="/projects"
-              className="text-sm font-semibold text-[var(--accent)] hover:underline"
-            >
-              See all projects
-            </Link>
-          </div>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {featuredProjects.map((project) => (
-              <ProjectCard
-                title={project.title}
-                description={project.description}
-                stack={project.stack}
-              />
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       <CardSection
         background={"bg-[var(--social-bg)]"}
         title={"Featured Projects"}
@@ -185,55 +183,27 @@ function Homepage() {
         ))}
       </CardSection>
 
-      <section className="border-y border-[var(--border)] px-6 py-14 sm:px-10 lg:px-14">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+      <CardSection background={""} title={"Skills"}>
+        {skills.map((skill) => (
+          <SkillCard icon={skill.icon} title={skill.title} />
+        ))}
+      </CardSection>
+
+      {/* <section className="border-y border-[var(--border)] px-6 py-14 sm:px-10 lg:px-14">
+        <div className="mx-auto grid max-w-6xl">
           <div>
             <p className="text-3xl font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
               Skills
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-3">
-            {skillGroups.map((group) => (
-              <section
-                key={group.title}
-                className="rounded-lg border border-[var(--border)] p-5"
-              >
-                <h3 className="font-semibold text-[var(--text-h)]">
-                  {group.title}
-                </h3>
-                <ul className="mt-4 space-y-3">
-                  {group.skills.map((skill) => (
-                    <li key={skill} className="flex items-center gap-2 text-sm">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-              </section>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {skills.map((skill) => (
+              <SkillCard icon={skill.icon} title={skill.title} />
             ))}
           </div>
         </div>
-      </section>
-
-      <section className="border-t border-[var(--border)] px-6 py-12 sm:px-10 lg:px-14">
-        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 rounded-lg border border-[var(--border)] bg-[var(--text-h)] p-6 text-[var(--bg)] sm:flex-row sm:items-center">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] opacity-70">
-              Let's connect
-            </p>
-            <h2 className="mt-2 text-left text-2xl font-semibold text-[var(--bg)]">
-              Have a role, project, or collaboration in mind?
-            </h2>
-          </div>
-          <Link
-            to="/chat"
-            className="inline-flex items-center justify-center rounded-md bg-[var(--bg)] px-5 py-3 text-sm font-semibold text-[var(--text-h)] transition hover:opacity-90"
-          >
-            Start a conversation
-          </Link>
-        </div>
-      </section>
+      </section> */}
     </main>
   );
 }
