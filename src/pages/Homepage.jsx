@@ -112,8 +112,6 @@ function Homepage() {
       <CardSection
         background={"bg-[var(--social-bg)]"}
         title={"Featured Projects"}
-        link={"projects"}
-        linkName={"See all projects"}
       >
         {projects.map((project) => (
           <ProjectCard
