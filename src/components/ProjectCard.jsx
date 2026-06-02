@@ -1,10 +1,18 @@
-function ProjectCard({ title, description, stack }) {
+import { Link } from "react-router-dom";
+
+function ProjectCard({ slug, title, description, stack }) {
   return (
     <article
       key={title}
       className="rounded-lg border border-[var(--border)] bg-[var(--bg)] p-5"
     >
-      <h3 className="text-xl font-semibold text-[var(--text-h)]">{title}</h3>
+      {/* <h3 className="text-xl font-semibold text-[var(--text-h)]">{title}</h3> */}
+      <Link
+        to={`/${slug}`}
+        className="text-xl font-semibold text-[var(--text-h)] hover:underline"
+      >
+        {title}
+      </Link>
       <p className="mt-3 min-h-28 leading-7">{description}</p>
       <div className="mt-5 flex flex-wrap gap-2">
         {stack.map((item) => (

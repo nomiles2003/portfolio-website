@@ -117,6 +117,7 @@ function Homepage() {
       >
         {projects.map((project) => (
           <ProjectCard
+            slug={project.slug}
             title={project.title}
             description={project.description}
             stack={project.stack}
