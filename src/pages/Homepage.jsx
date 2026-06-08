@@ -4,6 +4,7 @@ import CardSection from "../components/CardSection";
 import SkillCard from "../components/SkillCard";
 import { projects } from "../../data/projects";
 import { skills } from "../../data/skills";
+import TitleBar from "../components/TitleBar";
 
 const highlights = [
   { label: "Years coding", value: "4+" },
@@ -14,36 +15,7 @@ const highlights = [
 function Homepage() {
   return (
     <main className="min-h-screen bg-[var(--bg)] text-left text-[var(--text)]">
-      <section className="border-b border-[var(--border)] px-6 py-8 sm:px-10 lg:px-14">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4">
-          <Link
-            to="/"
-            className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--text-h)]"
-          >
-            Noble Miles
-          </Link>
-          <div className="flex items-center gap-2 sm:gap-3">
-            <Link
-              to="/aboutme"
-              className="rounded-md px-3 py-2 text-sm font-medium text-[var(--text)] transition hover:bg-[var(--social-bg)] hover:text-[var(--text-h)]"
-            >
-              About
-            </Link>
-            <Link
-              to="/projects"
-              className="rounded-md px-3 py-2 text-sm font-medium text-[var(--text)] transition hover:bg-[var(--social-bg)] hover:text-[var(--text-h)]"
-            >
-              Projects
-            </Link>
-            <Link
-              to="/chat"
-              className="rounded-md border border-[var(--accent-border)] bg-[var(--accent-bg)] px-3 py-2 text-sm font-semibold text-[var(--accent)] transition hover:border-[var(--accent)]"
-            >
-              Chat
-            </Link>
-          </div>
-        </nav>
-      </section>
+      <TitleBar />
 
       <section className="px-6 py-16 sm:px-10 sm:py-20 lg:px-14">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
